@@ -4,7 +4,7 @@ const PAGES = {
 
   // ─── 首页 ───────────────────────────────────────────
   "index": {
-    texts: ["你是某国男性,简称国男，20岁,是学生，就读于某高校。今天你没有课， 你决定:"],
+    texts: ["游戏原作者：Fengzi2333，由mxkkkk修改","你是某国男性,简称国男，20岁,是学生，就读于某高校。今天你没有课， 你决定:"],
     choices: [
       { text: "待在宿舍", target: "endingneet" },
       { text: "出去逛逛", target: "scenedecidebelongings" }
@@ -16,12 +16,47 @@ const PAGES = {
     texts: ["出门应该带上哪些东西好呢，你看看手机、平板、kindle、switch...决定："],
     choices: [
       { text: "全都带上", target: "endingnottouch" },
-      { text: "只带必要的", target: "scenelining" }
+      { text: "只带必要的", target: "wheretogo" }
+    ]
+  },
+
+  "wheretogo": {
+    texts: ["你只带了手机和蓝牙耳机，你现在对去哪里还没有什么想法，你决定："],
+    choices: [
+      { text: "去图书馆", target: "scenelibrary" },
+      { text: "随便逛", target: "scenelining" }
+    ]
+  },
+
+  "scenelibrary":{
+    texts: ["你来到了图书馆，想找个安静的地方看会书，你因为有皮肤病，所以裆部瘙痒难忍，你挠了挠，发现学姐似乎在拍摄你的裆部。你没管，继续看书，过了一会，学姐质问你做了什么，并要求写道歉信，你的做法？"],
+    choices: [
+      { text: "多一事不如少一事，道歉", target: "endingapology" },
+      { text: "大声据理力争，然后报警", target: "endingdispute" }
+    ]
+  },
+
+  "endingdispute":{
+    texts: [
+      "你高声据理力争，并称要报警，怼的学姐无话可说，最后你和解了事，解决完学姐以后，你想去别的地方散散心，你的选择：",
+      "来源：杭州师范大学诬告https://user.guancha.cn/main/content?id=1016322"
+    ],
+    choices: [
+      { text: "坐地铁去小吃街", target: "metro" },
+      { text: "去吃午饭", target: "scenelining" }
+    ]
+  },
+
+  "metro": {
+    texts: ["你坐地铁去小吃街，你坐在地铁上，你想要？"],
+    choices: [
+      { text: "玩手机", target: "metrophone" },
+      { text: "睡觉", target: "metrosleep" }
     ]
   },
 
   "scenelining": {
-    texts: ["你只带了手机和蓝牙耳机。你在学校逛了一圈， 看了看时间该吃午饭了，于是你来到食堂，发现这里已经人满患，你选了一个看起来不太长的队伍走了过去："],
+    texts: ["你在学校逛了一圈， 看了看时间该吃午饭了，于是你来到食堂，发现这里已经人满患，你选了一个看起来不太长的队伍走了过去："],
     choices: [
       { text: "为了防止有人插队，你紧紧跟着前一个人", target: "endingbornguilt" },
       { text: "和前一个人保持距离", target: "scenewaitinginline" }
@@ -102,6 +137,38 @@ const PAGES = {
   },
 
   // ─── 结局页 ─────────────────────────────────────────
+  "endingapology":{
+    texts: [
+      "你虽然不知道自己干了什么，但还是写了一封道歉信。过几个月发现，你被学姐挂在了社交媒体上。后续诉讼法院虽然判你胜诉，但是学姐发了没打码的判决书，你的真名和身份证号被公开，后续经历了更严峻的造谣，你早已无法在互联网上露面",
+      "来源：武汉大学图书馆",
+    ],
+    endLabel: "赔了夫人又折兵",
+    choices: [{ text: "如果能重来...", target: "index" }]
+  },
+
+  "metrophone": {
+    texts: ["你玩手机玩得太入迷了，突然听到一个女生询问你是不是在拍她，并要求检查相册，你给她检查了相册，发现没有照片",
+      "她却在社交网络上称你偷拍她，称其为“猥琐男”，称手法娴熟不是第一次作案，并表示既然没有偷拍，那他为什么不为自己发声，你社会性死亡了。",
+      "后续有网友替你发声，最后女生哭着找你和解，称自己要被开除了。结果几天后一看，只是留校留党，根本不存在开除这一说，你白白被网暴",
+      "来源：6·7川大女生污蔑大叔偷拍事件（张薇）",
+    ],
+    endLabel: "招谁惹谁？",
+    choices: [
+      { text: "如果能重来...", target: "index" }
+    ]
+  },
+
+  "metrosleep":{
+    texts: ["你睡着了，没有给另外一个女生让座，那个女生砸你的头，称男人必须站着，导致你受伤住院。",
+      "来源：广州地铁4号线拒让座被女子殴打事件",
+      "参考文献：https://baijiahao.baidu.com/s?id=1760569549600510915&wfr=spider&for=pc",
+    ],
+    endLabel: "睡也睡不好",
+    choices: [
+      { text: "如果能重来...", target: "index" }
+    ]
+  },
+
   "endingneet": {
     texts: [
       "你打算在宿舍享受一下颓废的生活，于是叫了一份外卖开始打游戏。几轮厮杀过后，看到你舍友问你为什么在食堂对着女生DIY，你感觉莫名其妙，一番网上冲浪后才知道，社交网络上到处都是你的负面消息，而你今天并没有出过宿舍。事后事件源头的女生表示事件纯属虚构，而你已经社会性死亡。",
