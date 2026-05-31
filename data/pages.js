@@ -3,11 +3,29 @@
 const PAGES = {
 
   // ─── 首页 ───────────────────────────────────────────
-  "index": {
-    texts: ["游戏原作者：Fengzi2333，由mxkkkk修改","你是某国男性,简称国男，20岁,是学生，就读于某高校。今天你没有课， 你决定:"],
+  
+
+  "index1": {
+    texts: ["你是某国男性,简称国男，20岁,是学生，就读于某高校。今天你没有课， 你决定:"],
     choices: [
       { text: "待在宿舍", target: "endingneet" },
       { text: "出去逛逛", target: "scenedecidebelongings" }
+    ]
+  },
+
+  "index2":{
+    texts: ["你顺利的长大到了16岁","听到楼底下有女孩在说「救命啊，我的妹妹掉进河里了！」","你选择？"],
+    choices: [
+      { text: "跳河救人", target: "th" },
+      { text: "多一事不如少一事", target: "index1" },
+    ]
+  },
+
+  "th":{
+    texts: ["你跳河救人，结果发现根本没有妹妹，只是一条狗，你被淹死了，全剧终","参考：https://m.thepaper.cn/baijiahao_18710839"],
+    endLabel: "好心没好报",
+    choices: [
+      { text: "如果能重来...", target: "index" },
     ]
   },
 
@@ -137,13 +155,21 @@ const PAGES = {
   },
 
   // ─── 结局页 ─────────────────────────────────────────
+"index": {
+    texts: ["你4岁，被17岁女邻居反复割喉致死，全剧终","参考：https://www.163.com/dy/article_v2/HF71D7KK0552GQIA.html"],
+    endLabel: "开局就死",
+    choices: [
+      { text: "如果能重来", target: "index2" },
+    ]
+  },
+
   "endingapology":{
     texts: [
       "你虽然不知道自己干了什么，但还是写了一封道歉信。过几个月发现，你被学姐挂在了社交媒体上。后续诉讼法院虽然判你胜诉，但是学姐发了没打码的判决书，你的真名和身份证号被公开，后续经历了更严峻的造谣，你早已无法在互联网上露面",
       "来源：武汉大学图书馆",
     ],
     endLabel: "赔了夫人又折兵",
-    choices: [{ text: "如果能重来...", target: "index" }]
+    choices: [{ text: "如果能重来...", target: "index1" }]
   },
 
   "metrophone": {
@@ -152,9 +178,9 @@ const PAGES = {
       "后续有网友替你发声，最后女生哭着找你和解，称自己要被开除了。结果几天后一看，只是留校留党，根本不存在开除这一说，你白白被网暴",
       "来源：6·7川大女生污蔑大叔偷拍事件（张薇）",
     ],
-    endLabel: "招谁惹谁？",
+    endLabel: "欲加之罪",
     choices: [
-      { text: "如果能重来...", target: "index" }
+      { text: "如果能重来...", target: "index1" }
     ]
   },
 
@@ -163,9 +189,9 @@ const PAGES = {
       "来源：广州地铁4号线拒让座被女子殴打事件",
       "参考文献：https://baijiahao.baidu.com/s?id=1760569549600510915&wfr=spider&for=pc",
     ],
-    endLabel: "睡也睡不好",
+    endLabel: "招谁惹谁？",
     choices: [
-      { text: "如果能重来...", target: "index" }
+      { text: "如果能重来...", target: "index1" }
     ]
   },
 
@@ -176,7 +202,7 @@ const PAGES = {
       "关键词：深圳大学 食堂"
     ],
     endLabel: "人在家中坐",
-    choices: [{ text: "如果能重来...", target: "index" }]
+    choices: [{ text: "如果能重来...", target: "index1" }]
   },
 
   "endingawayout": {
@@ -186,7 +212,7 @@ const PAGES = {
       "关键词：货拉拉司机 周某春"
     ],
     endLabel: "逃出升天",
-    choices: [{ text: "如果能重来...", target: "index" }]
+    choices: [{ text: "如果能重来...", target: "index1" }]
   },
 
   "endingbloodbath": {
@@ -196,7 +222,7 @@ const PAGES = {
       "关键词：湖南一女子乘出租车拿刀刺司机"
     ],
     endLabel: "血光之灾",
-    choices: [{ text: "如果能重来...", target: "index" }]
+    choices: [{ text: "如果能重来...", target: "index1" }]
   },
 
   "endingbornguilt": {
@@ -205,13 +231,13 @@ const PAGES = {
       "来源：https://weibo.com/p/231522cba6129f538ccfce7f46a63025fc45e6"
     ],
     endLabel: "欲加之罪",
-    choices: [{ text: "如果能重来...", target: "index" }]
+    choices: [{ text: "如果能重来...", target: "index1" }]
   },
 
   "endingcheatingwife": {
     texts: ["你换了个没人用的车位. 回到家，发现门前有一双不认识的男鞋，开门看到老婆正在和一名陌生男子一起为爱鼓掌。"],
     endLabel: "同道中人",
-    choices: [{ text: "如果能重来...", target: "index" }]
+    choices: [{ text: "如果能重来...", target: "index1" }]
   },
 
   "endingextermination": {
@@ -221,7 +247,7 @@ const PAGES = {
       "关键词：彭州 岳父 灭门"
     ],
     endLabel: "鸡犬不留",
-    choices: [{ text: "如果能重来...", target: "index" }]
+    choices: [{ text: "如果能重来...", target: "index1" }]
   },
 
   "endingfutureawaits": {
@@ -233,7 +259,7 @@ const PAGES = {
   "endinggreenabove": {
     texts: ["你对两个儿子的容貌差异视若无睹，视如己出，老婆对你很满意，不久，你们又生了第三胎。"],
     endLabel: "难得糊涂",
-    choices: [{ text: "如果能重来...", target: "index" }]
+    choices: [{ text: "如果能重来...", target: "index1" }]
   },
 
   "endinghigherrace": {
@@ -242,7 +268,7 @@ const PAGES = {
       "关键词：北京师范大学 电梯"
     ],
     endLabel: "高人一等",
-    choices: [{ text: "如果能重来...", target: "index" }]
+    choices: [{ text: "如果能重来...", target: "index1" }]
   },
 
   "endingnottouch": {
@@ -252,7 +278,7 @@ const PAGES = {
       "关键词：清华老师回应学姐错告学弟"
     ],
     endLabel: "无过则勉",
-    choices: [{ text: "如果能重来...", target: "index" }]
+    choices: [{ text: "如果能重来...", target: "index1" }]
   },
 
   "endingthiefcatched": {
@@ -261,7 +287,7 @@ const PAGES = {
       "关键词：华东理工大学 耳机"
     ],
     endLabel: "捉贼拿脏",
-    choices: [{ text: "如果能重来...", target: "index" }]
+    choices: [{ text: "如果能重来...", target: "index1" }]
   },
 
   "endingunbearablepain": {
@@ -271,7 +297,7 @@ const PAGES = {
       "关键词：男童被陌生女抱走后在附近小区坠亡"
     ],
     endLabel: "切肤之痛",
-    choices: [{ text: "如果能重来...", target: "index" }]
+    choices: [{ text: "如果能重来...", target: "index1" }]
   },
 
   "endingunexpecteddisaster": {
@@ -280,7 +306,7 @@ const PAGES = {
       "关键词：广东医科大学 玻璃瓶"
     ],
     endLabel: "无妄之灾",
-    choices: [{ text: "如果能重来...", target: "index" }]
+    choices: [{ text: "如果能重来...", target: "index1" }]
   }
 };
 
